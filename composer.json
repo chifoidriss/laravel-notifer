@@ -1,0 +1,43 @@
+{
+  "name": "chifoidriss/laravel-notifer",
+  "description": "Flexible flash notifications for Laravel",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Idriss CHIFO",
+      "email": "chifoidriss@gmail.com",
+      "homepage": "http://chifo.homedeve.com",
+      "role"    : "Developer"
+    }
+  ],
+  "homepage": "https://github.com/chifoidriss/laravel-notifer",
+  "keywords": ["Laravel", "laravel-notifer", "notifer", "notification"],
+  "require": {
+    "php": ">=7.0",
+    "illuminate/support": "~7.0|~8.0"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.0",
+    "phpunit/phpunit": "^8.0|^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Chifoidriss\\Notifer\\": "src/"
+    },
+    "files": [
+      "src/Helpers.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Chifoidriss\\Notifer\\LaravelNotiferServiceProvider"
+      ],
+      "aliases": {
+        "Notifer": "Chifoidriss\\Notifer\\Facades\\LaravelNotifer"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
