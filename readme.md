@@ -99,7 +99,7 @@ An complete example:
         
         @include('notifer::notifer')
         // Laravel 7 or greater
-        <x:notifer-messages />
+        <x:notifer-notifer />
         @notiferJs
     </body>
 </html>
