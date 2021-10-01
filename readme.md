@@ -97,7 +97,7 @@ An complete example:
     <body>
         
         
-        @include('notifer::messages')
+        @include('notifer::notifer')
         // Laravel 7 or greater
         <x:notifer-messages />
         @notiferJs
