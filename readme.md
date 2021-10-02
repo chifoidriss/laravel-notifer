@@ -25,7 +25,7 @@ If you need Android version please try this package [Aesthetic Dialogs](https://
 You can install the package using composer
 
 ```sh
-$ composer require chifoidriss/laravel-notifer
+composer require chifoidriss/laravel-notifer
 ```
 
 Then add the service provider to `config/app.php`. In Laravel versions 5.5 and beyond, this step can be skipped if package auto-discovery is enabled.
@@ -41,13 +41,13 @@ Then add the service provider to `config/app.php`. In Laravel versions 5.5 and b
 You can publish the configuration file and assets by running:
  
 ```sh
-$ php artisan vendor:publish --provider="Chifoidriss\Notifer\LaravelNotiferServiceProvider"
+php artisan vendor:publish --provider="Chifoidriss\Notifer\LaravelNotiferServiceProvider"
 ```
 
 Now that we have published a few new files to our application we need to reload them with the following command:
 
 ```sh
-$ composer dump-autoload
+composer dump-autoload
 ```
 
 ## Usage 
@@ -55,7 +55,7 @@ $ composer dump-autoload
 1. Add styles links with `@notiferCss`
 2. Add scripts links with `@notiferJs`
 3. use `notifer()` helper function inside your controller to set a toast notification for info, success, warning or error
-4. Include notifer partial to your master layout `@include('notifer::messages')`
+4. Include notifer partial to your master layout `@include('notifer::notifer')`
 
 If you are on Laravel 7 or greater, you can use the tag syntax.
 
