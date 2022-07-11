@@ -4,9 +4,9 @@
 @if (session()->has('notifer.message'))
 
     @if (session()->get('notifer.model') === 'toast')
-        <div class="notify-alert notify-{{ session()->get('notifer.type') }} {{ config('notifer.theme') }} animated {{ config('notifer.animate.in_class') }}" role="alert">
-            <div class="notify-alert-icon">
-                <i class="fa fa-{{ notiferIcon(session()->get('notifer.type')) }}"></i>
+        <div class="notify-alert notify-{{ session()->get('notifer.type') }} {{ config('notifer.theme') }} animated {{ config('notifer.animate.in_class') }}" style="border-color: {{ config('notifer.color.'.session()->get('notifer.type')) }};" role="alert">
+            <div class="notify-alert-icon" style="background-color: {{ config('notifer.color.'.session()->get('notifer.type')) }};">
+                <i class="{{ config('notifer.icon.toast.'.session()->get('notifer.type')) }}"></i>
             </div>
             <div class="notify-alert-text">
                 <h4>{{ session()->get('notifer.title') ? (session()->get('notifer.title')) : (session()->get('notifer.type')) }}</h4>
@@ -14,7 +14,7 @@
             </div>
             <div class="notify-alert-close">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                    <span aria-hidden="true"><i class="{{ config('notifer.icon.close') }}"></i></span>
                 </button>
             </div>
         </div>
@@ -23,7 +23,9 @@
     @if (session()->get('notifer.model') === 'smiley')
         <div class="smiley-alert smiley-{{ session()->get('notifer.type') }} {{ config('notifer.theme') }} animated {{ config('notifer.animate.in_class') }}" role="alert">
             <div class="smiley-icon">
-                <span>{{ notiferIcon(session()->get('notifer.type')) }}</span>
+                <span>
+                    <i class="{{ config('notifer.icon.toast.'.session()->get('notifer.type')) }}"></i>
+                </span>
             </div>
             <div class="smiley-text">
                 <p>
@@ -33,7 +35,7 @@
             </div>
             <div class="smiley-close">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                    <span aria-hidden="true"><i class="{{ config('notifer.icon.close') }}"></i></span>
                 </button>
             </div>
         </div>
@@ -51,7 +53,7 @@
             <div class="connectify-close">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">
-                        <i class="fa fa-times"></i>
+                        <i class="{{ config('notifer.icon.close') }}"></i>
                     </span>
                 </button>
             </div>
@@ -66,7 +68,7 @@
             </div>
             <div class="emoticon-close">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                    <span aria-hidden="true"><i class="{{ config('notifer.icon.close') }}"></i></span>
                 </button>
             </div>
         </div>

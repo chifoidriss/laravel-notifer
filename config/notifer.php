@@ -44,6 +44,7 @@ return [
     |
     | Use animate.css to animate the notice.
     |
+    | Possibles values:
     */
 
     'animate' => [
@@ -104,6 +105,41 @@ return [
             'model'   => 'connect',
             'title'   => 'User Deleted',
         ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Icons
+    |--------------------------------------------------------------------------
+    |
+    | Define icons here that can be reused.
+    |
+    */
+
+    'icon' => [
+        'toast' => [
+            'success' => 'fa fa-check',
+            'warning' => 'fa fa-exclamation-triangle',
+            'info' => 'fa fa-info',
+            'error' => 'fa fa-times',
+        ],
+        'close' => 'fa fa-times'
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Colors
+    |--------------------------------------------------------------------------
+    |
+    | Define colors here that can be reused.
+    |
+    */
+
+    'color' => [
+        'success' => '#47d764',
+        'warning' => '#ffc022',
+        'info' => '#2e86eb',
+        'error' => '#ed3063',
     ],
 
 ];
