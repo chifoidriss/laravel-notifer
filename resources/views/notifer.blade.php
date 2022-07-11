@@ -1,5 +1,5 @@
 <style>
-    .notify-alert, .smiley-alert, .connectify-alert, .emoticon-alert { z-index: 100000; }
+    .notify-alert, .smiley-alert, .connectify-alert, .emoticon-alert { z-index: {{ config('notifer.z-index') }}; }
 </style>
 @if (session()->has('notifer.message'))
 
@@ -10,7 +10,7 @@
             </div>
             <div class="notify-alert-text">
                 <h4>{{ session()->get('notifer.title') ? (session()->get('notifer.title')) : (session()->get('notifer.type')) }}</h4>
-                <p>{{ (session()->get('notifer.message')) }}</p>
+                <p>{!! (session()->get('notifer.message')) !!}</p>
             </div>
             <div class="notify-alert-close">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -28,7 +28,7 @@
             <div class="smiley-text">
                 <p>
                     <span class="title">{{ (session()->get('notifer.type')) }}!</span>
-                    {{ (session()->get('notifer.message')) }}
+                    {!! (session()->get('notifer.message')) !!}
                 </p>
             </div>
             <div class="smiley-close">
@@ -46,7 +46,7 @@
             </div>
             <div class="connectify-text">
                 <h4>{{ (session()->get('notifer.title')) }}</h4>
-                <p>{{ (session()->get('notifer.message')) }}</p>
+                <p>{!! (session()->get('notifer.message')) !!}</p>
             </div>
             <div class="connectify-close">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -62,7 +62,7 @@
         <div class="emoticon-alert emoticon-{{ session()->get('notifer.type') }} animated {{ config('notifer.animate.in_class') }}" role="alert">
             <div class="emoticon-icon"><span></span></div>
             <div class="emoticon-text">
-                <p>{{ (session()->get('notifer.message')) }}</p>
+                <p>{!! (session()->get('notifer.message')) !!}</p>
             </div>
             <div class="emoticon-close">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
