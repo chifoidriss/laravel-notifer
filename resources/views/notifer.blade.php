@@ -4,7 +4,7 @@
 @if (session()->has('notifer.message'))
 
     @if (session()->get('notifer.model') === 'toast')
-        <div class="notify-alert notify-{{ session()->get('notifer.type') }}- {{ config('notifer.theme') }} animated {{ config('notifer.animate.in_class') }}" style="border-color: {{ config('notifer.color.'.session()->get('notifer.type')) }};" role="alert">
+        <div class="notify-alert notify-{{ session()->get('notifer.type') }} {{ config('notifer.theme') }} animated {{ config('notifer.animate.in_class') }}" style="border-color: {{ config('notifer.color.'.session()->get('notifer.type')) }} !important;" role="alert">
             <div class="notify-alert-icon" style="background-color: {{ config('notifer.color.'.session()->get('notifer.type')) }};">
                 <i class="{{ config('notifer.icon.toast.'.session()->get('notifer.type')) }}"></i>
             </div>
